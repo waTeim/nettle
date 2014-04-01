@@ -31,7 +31,6 @@ starting with its first commit in September, 1998
   s.requires_arc = false
   s.vendored_libraries = 'lib/*.a'
   s.source_files = s.public_header_files =
-     'include/*.h',
      'include/**/*.h'
   s.header_mappings_dir = 'include'
 end
