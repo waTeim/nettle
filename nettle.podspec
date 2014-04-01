@@ -1,37 +1,37 @@
-#
-# Be sure to run `pod lib lint NAME.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 Pod::Spec.new do |s|
-  s.name             = "nettle"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of nettle."
-  s.description      = <<-DESC
-                       An optional longer description of nettle
+  s.name         = "nettle"
+  s.version      = "2.7.1"
+  s.summary      = "Nettle is a cryptographic library that is designed to fit easily in more or less any context"
+  s.description  = <<-DESC
+Nettle is a cryptographic library that is designed to fit easily in more or less any context: In crypto toolkits for object-oriented languages (C++, Python, Pike, ...), in applications like LSH or GNUPG, or even in kernel space.
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "http://EXAMPLE/NAME"
-  s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "waTeim" => "truthset@gmail.com" }
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/EXAMPLE'
+In a Nutshell, libnettle...
 
-  # s.platform     = :ios, '5.0'
-  # s.ios.deployment_target = '5.0'
-  # s.osx.deployment_target = '10.7'
-  s.requires_arc = true
+...
+has had 3,016 commits made by 33 contributors 
+representing 70,138 lines of code
+...
+is mostly written in C 
+with a well-commented source code
+...
+has a well established, mature codebase 
+maintained by a average size development team 
+with increasing Y-O-Y commits
+...
+took an estimated 17 years of effort (COCOMO model) 
+starting with its first commit in September, 1998 
+                   DESC
+  s.homepage     = "http://www.ohloh.net/p/libnettle"
+  s.screenshots  = 
+  s.license      = 'LPGL'
+  s.author       = { "waTeim" => "truthset@gmail.com" }
+  s.source       = { :git => "https://github.com/waTeim/nettle.git", :tag => s.version.to_s }
 
-  s.source_files = 'Classes'
-  s.resources = 'Assets/*.png'
-
-  s.ios.exclude_files = 'Classes/osx'
-  s.osx.exclude_files = 'Classes/ios'
-  # s.public_header_files = 'Classes/**/*.h'
-  # s.frameworks = 'SomeFramework', 'AnotherFramework'
-  # s.dependency 'JSONKit', '~> 1.4'
+  s.platform     = :osx, '10.6'
+  s.requires_arc = false
+  s.vendored_libraries = 'lib/*.a'
+  s.source_files = s.public_header_files =
+     'include/*.h',
+     'include/**/*.h'
+  s.header_mappings_dir = 'include'
 end
