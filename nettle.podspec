@@ -22,15 +22,14 @@ took an estimated 17 years of effort (COCOMO model)
 starting with its first commit in September, 1998 
                    DESC
   s.homepage     = "http://www.ohloh.net/p/libnettle"
-  s.screenshots  = 
   s.license      = 'LPGL'
   s.author       = { "waTeim" => "truthset@gmail.com" }
   s.source       = { :git => "https://github.com/waTeim/nettle.git", :tag => s.version.to_s }
-
   s.platform     = :osx, '10.6'
   s.requires_arc = false
   s.vendored_libraries = 'lib/*.a'
-  s.source_files = s.public_header_files =
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/nettle/include"' }
+  s.private_header_files = s.source_files =
      'include/**/*.h'
   s.header_mappings_dir = 'include'
 end
